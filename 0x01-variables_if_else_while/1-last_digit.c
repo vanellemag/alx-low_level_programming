@@ -6,7 +6,8 @@
 
 /**
  * main-print the last digit of the number stored in the variable n
- *
+ *Description: print the last digit of int
+ *Return: 0 success
 */
 int main(void)
 {
