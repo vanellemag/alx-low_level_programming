@@ -4,6 +4,13 @@
 #include <stdio.h>
 
 /*betty style doc for function main goes there */
+
+/**
+ * main-print output
+ *
+ * description:assign a random number to the variable n
+ * Return: o if success
+*/
 int main(void)
 {
 	int n;
