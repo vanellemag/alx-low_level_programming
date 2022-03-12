@@ -6,16 +6,18 @@
 */
 int main(void)
 {
-	int ch, c, t;
+	int ch, c, t,e,f;
 
-	c = '9';
-	t = ' ';
+	c = '5';
+	e = '7';
+	t = '3';
+	f = '2';
 	for (ch = '0'; ch <= '8'; ch++)
 	{
 		putchar(ch);
 		putchar(',');
 		putchar(' ');
 	}
-	putchar(c + t);
+	putchar((c + e) + (t + f));
 	return (0);
 }
