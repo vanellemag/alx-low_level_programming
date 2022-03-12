@@ -14,6 +14,6 @@ int main(void)
 		putchar(',');
 		putchar(' ');
 	}
-	putchar('9');
+	putchar(57 + 32);
 	return (0);
 }
