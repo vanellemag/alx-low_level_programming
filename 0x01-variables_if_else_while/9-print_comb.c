@@ -8,13 +8,12 @@ int main(void)
 {
 	int ch, a;
 
-	a = '57 + 32';
 	for (ch = '0'; ch <= '8'; ch++)
 	{
 		putchar(ch);
 		putchar(',');
 		putchar(' ');
 	}
-	putchar(a);
+	putchar('9', 9);
 	return (0);
 }
