@@ -6,20 +6,22 @@
 */
 int main(void)
 {
-	int ch, c, t, e, f, s, m;
+	int ch, i, compt;
 
-	c = '5';
-	e = '7';
-	s = c + e;
-	t = '3';
-	f = '2';
-	m = t + f;
 	for (ch = '0'; ch <= '8'; ch++)
 	{
 		putchar(ch);
-		putchar(',');
-		putchar(' ');
+		i = ',';
+		compt = 1;
+		while (compt <= 2)
+		{
+			putchar(i);
+			i = ' ';
+			compt++;
+
+		}
 	}
-	putchar(s + m);
+	putchar('9');
+	putchar(' ');
 	return (0);
 }
