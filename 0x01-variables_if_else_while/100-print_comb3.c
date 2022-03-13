@@ -10,7 +10,7 @@ int main(void)
 	/* processus */
 	for (i = '0'; i <= '7'; i++)
 	{
-		for (j = i + '1'; j <= '9'; j++)
+		for (j = i + 1; j <= '9'; j++)
 		{
 			m = i;
 			compt1 = 1;
