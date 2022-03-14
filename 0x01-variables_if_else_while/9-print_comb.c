@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-	int ch, i, compt;
+	int ch, i, compt, l;
 
 	for (ch = '0'; ch <= '8'; ch++)
 	{
@@ -21,7 +21,13 @@ int main(void)
 
 		}
 	}
-	putchar('9');
-	putchar(' ');
+	l = '9';
+	compt = 1;
+	while (compt <= 2)
+	{
+		putchar(l);
+		l = ' ';
+		compt++;
+	}
 	return (0);
 }
