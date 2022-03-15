@@ -26,7 +26,7 @@ int main(void)
 		ch++;
 	}
 	i = 'c';
-	ch = 2;
+	ch = 1;
 	while (ch <= 2)
 	{
 		_putchar (i);
