@@ -41,7 +41,6 @@ int main(void)
 		i = 'r';
 		ch++;
 	}
-	_putchar (' ');
 	_putchar ('\n');
 	return (0);
 }
