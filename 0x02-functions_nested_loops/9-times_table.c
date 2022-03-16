@@ -18,6 +18,9 @@ void times_table(void)
 			m = x * i;
 			printf("%d", m);
 			printf(", ");
+			x++;
 		}
+		printf("\n");
+		i++;
 	}
 }
