@@ -33,7 +33,7 @@ int fibonacci(int n)
 */
 int main(void)
 {
-	int j;
+	int j, comp;
 
 	j = 1;
 	while (j <= 50)

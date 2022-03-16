@@ -23,7 +23,7 @@ void print_times_table(int n)
 			while (j < n + 1)
 			{
 				s = i * j;
-				printf("%d, ", s);
+				printf("%d,  ", s);
 				j++;
 			}
 			printf("\n");
