@@ -5,7 +5,7 @@
 */
 void jack_bauer(void)
 {
-	int h1, h2, m1, m2;
+	int h1, h2, m1, m2, c, k, t;
 
 	for (h1 = '0'; h1 <= '2'; h1++)
 	{
@@ -15,11 +15,24 @@ void jack_bauer(void)
 			{
 				for (m2 = '0'; m2 <= '9'; m2++)
 				{
-					_putchar(h1);
-					_putchar(h2);
+					k = h1;
+					c = 1;
+					while (c <= 2)
+					{
+						_putchar(k);
+						k = h2;
+						c++;
+
+					}
 					_putchar(':');
-					_putchar(m1);
-					_putchar(m2);
+					t = m1;
+					c = 1;
+					while (c <= 2)
+					{
+						_putchar(t);
+						t = m2;
+					}
+					_putchar('\n');
 				}
 			}
 		}
