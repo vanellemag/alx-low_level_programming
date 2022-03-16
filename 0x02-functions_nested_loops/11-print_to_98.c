@@ -8,14 +8,11 @@
 */
 void print_to_98(int n)
 {
-	int c;
-
-	c = n;
-	while (c <= 97)
+	while (n <= 97)
 	{
-		printf("%d", c);
+		printf("%d", n);
 		printf(", ");
-		c++;
+		n++;
 	}
 	printf("98");
 	printf("\n");
