@@ -31,6 +31,7 @@ void jack_bauer(void)
 					{
 						_putchar(t);
 						t = m2;
+						c++;
 					}
 					_putchar('\n');
 				}
