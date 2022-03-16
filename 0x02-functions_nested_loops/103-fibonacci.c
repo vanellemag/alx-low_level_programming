@@ -36,7 +36,7 @@ int main(void)
 
 	s = 0;
 	j = 1;
-	while (fibonacci(j) < 400000)
+	while (fibonacci(j) <= 400000)
 	{
 		m = fibonacci(j);
 		if (m % 2 == 0)
