@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, min, j, n, r, tab[5][1];
+	int i, min, j, n, r, tab[5], v[5];
 
 	tab[0] = 1;
 	tab[1] = 2;
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	tab[4] = 25;
 	if (argc == 2)
 	{
-		if (argv[1] < 0)
+		if (*argv[1] < 0)
 		{
 			printf("0\n");
 		}
@@ -25,14 +25,14 @@ int main(int argc, char *argv[])
 		{
 			for (i = 0; i < 5; i++)
 			{
-				if (*argv[1] % *tab[i] == 0)
+				if (*argv[1] % tab[i] == 0)
 				{
-					tab[i][0] = argv[1] / tab[i];
+					v[i] = *argv[1] / tab[i];
 				}
 				else
 				{
-					r = argv[1] % tab[i];
-					n = argv[1] / tab[i];
+					r = *argv[1] % tab[i];
+					n = *argv[1] / tab[i];
 					for (j = 0; j < 5; j++)
 					{
 						if (r == tab[j])
@@ -40,15 +40,15 @@ int main(int argc, char *argv[])
 							n = n + 1;
 						}
 					}
-					tab[i][0] = n;
+					v[i] = n;
 				}
 			}
-			min = tab[0][0];
+			min = v[0];
 			for (i = 1; i < 5; i++)
 			{
-				if (min > tab[i][0])
+				if (min > v[i])
 				{
-					min = tab[i][0];
+					min = v[i];
 				}
 			}
 			printf("%d\n", min);

@@ -12,10 +12,13 @@ int main(int argc, char *argv[])
 
 	if (argc == 3)
 	{
-		i = *argv[1];
-		j = *argv[2];
-		mul = i * j;
-		printf("%d\n", mul);
+		if (sizeof(*argv[1]) == sizeof(int) && sizeof(argv[2]) == sizeof(int))
+		{
+			i = *argv[1];
+			j = *argv[2];
+			mul = i * j;
+			printf("%d\n", mul);
+		}
 	}
 	else
 	{
