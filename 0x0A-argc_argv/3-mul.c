@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - multiplies two numbers
  * @argc: int
@@ -8,17 +9,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int mul, i, j;
+	int mul;
 
 	if (argc == 3)
 	{
-		if (sizeof(*argv[1]) == sizeof(int) && sizeof(argv[2]) == sizeof(int))
-		{
-			i = *argv[1];
-			j = *argv[2];
-			mul = i * j;
-			printf("%d\n", mul);
-		}
+		mul = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", mul);
 	}
 	else
 	{
