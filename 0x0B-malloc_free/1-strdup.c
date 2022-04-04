@@ -22,12 +22,15 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		cp[i] = str[i];
-		i++;
-
+		i = 0;
+		while (i < len)
+		{
+			cp[i] = str[i];
+			i++;
+		}
+		cp[i] = '\0';
 	}
 	return (cp);
 }
