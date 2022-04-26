@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include "lists.h"
 #include <string.h>
 /**
@@ -8,15 +8,13 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	int count = 0;
+	int len = 0;
 
-	if (h != NULL)
+	while (h != NULL)
 	{
-		while (h->next != NULL)
-		{
-			count++;
-			h = h->next;
-		}
+		printf("%d\n", h->n);
+		len++;
+		h = h->next;
 	}
-	return (count);
+	return (len);
 }
