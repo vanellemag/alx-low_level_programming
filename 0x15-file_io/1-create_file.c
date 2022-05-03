@@ -19,10 +19,13 @@ int create_file(const char *filename, char *text_content)
 	}
 	else
 	{
-		while (ch != NULL)
+		if (text_content != NULL)
 		{
-			fputc(*ch, file);
-			ch++;
+			while (ch != NULL)
+			{
+				fputc(*ch, file);
+				ch++;
+			}
 		}
 	}
 	fclose(file);

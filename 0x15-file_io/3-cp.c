@@ -13,31 +13,30 @@
 int main(int argc, char *argv[])
 {
 	char c;
+	int i = 0, buffer = 1024;
 	FILE *file1 = fopen(argv[1], "r+");
 	FILE *file2 = fopen(argv[2], "w+");
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	if (file1 == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	/*FILE *file2 = fopen(argv[2], "w+");*/
-
 	if (file2 == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	c = fgetc(file1);
-	while (c != EOF)
+	c = getc(file1);
+	while (c != EOF || (i <= buffer))
 	{
-		fputc(c, file2);
-		c = fgetc(file1);
+		putc(c, file2);
+		c = getc(file1);
 	}
 	fclose(file1);
 	fclose(file2);

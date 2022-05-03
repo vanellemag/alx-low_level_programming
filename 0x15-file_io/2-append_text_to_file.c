@@ -7,7 +7,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *file = fopen(filename, "ra");
+	FILE *file = fopen(filename, "r + a");
 
 	if (filename == NULL)
 		return (-1);
