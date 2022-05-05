@@ -12,9 +12,8 @@ size_t read_textfile(const char *filename, size_t letters)
 	FILE *file;
 	char c;
 	int let = 0;
-	size_t i = 0;
 
-	file = fopen(filename, "rt");
+	file = fopen(filename, "r++");
 	if (filename == NULL)
 		return (0);
 	if (file == NULL)
@@ -23,11 +22,11 @@ size_t read_textfile(const char *filename, size_t letters)
 	}
 	else
 	{
-		while ((i > letters) && ((c = fgetc(file)) != EOF))
+		while ((letters > 0) && ((c = fgetc(file)) != EOF))
 		{
 			printf("%c", c);
 			let++;
-			i++;
+			letters--;
 		}
 		if (fgetc(file) == EOF)
 		{
