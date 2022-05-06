@@ -35,7 +35,6 @@ int main(int argc, char *argv[])
 	while (c != EOF)
 	{
 		putc(c, file2);
-		file1++;
 		c = getc(file1);
 	}
 	fclose(file1);
