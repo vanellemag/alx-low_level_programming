@@ -12,8 +12,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char c;
-	int i = 0, buffer = 1024;
+	char buf[1024];
 	FILE *file1 = fopen(argv[1], "r+");
 	FILE *file2 = fopen(argv[2], "w+");
 
@@ -22,25 +21,26 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (file1 == NULL)
+	while (!feof(file1))
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	if (file2 == NULL)
-	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	c = getc(file1);
-	while (c != EOF || (i <= buffer))
-	{
-		putc(c, file2);
-		c = getc(file1);
+		size_t l;
+
+		l = fread(buf, sizeof(*buf), 1024, file1);
+		if (ferror(file1))
+		{
+			dprintf(2, "Error: can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		fwrite(buf, sizeof(*buf), l, file2);
+		if (ferror(file2))
+		{
+			dprintf(2, "Error: can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	fclose(file1);
 	fclose(file2);
-	if (fclose(file1) == EOF || fclose(file2) == EOF)
+	if (fclose(file1) || fclose(file2))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close  fd EOF\n");
 		exit(100);
