@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	}
 	fclose(file1);
 	fclose(file2);
-	if (fclose(file1) || fclose(file2))
+	if (fclose(file1) == EOF || fclose(file2) == EOF)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close  fd EOF\n");
 		exit(100);
