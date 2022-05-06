@@ -8,6 +8,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	FILE *file = fopen(filename, "r + a");
+	char *c = text_content;
 
 	if (filename == NULL)
 		return (-1);
@@ -17,10 +18,10 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	else
 	{
-		while (text_content != NULL)
+		while (c != NULL)
 		{
-			fputc(*text_content, file);
-			text_content++;
+			fputc(*c, file);
+			c++;
 		}
 	}
 	return (1);
