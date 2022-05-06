@@ -14,9 +14,9 @@ size_t read_textfile(const char *filename, size_t letters)
 	int let = 0;
 
 	file = fopen(filename, "rt+");
-	/**if (filename == NULL)
-		return (0);**/
-	if ((file == NULL) && (filename == NULL))
+	if (filename == NULL)
+		return (0);
+	if (file == NULL)
 	{
 		return (0);
 	}
